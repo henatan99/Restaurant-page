@@ -2,7 +2,7 @@
   "name": "restaurant-page",
   "version": "1.0.0",
   "description": "This project is building a restaurant page web app to put into work modularized JS code and webpack.",
-  "main": "index.js",
+  "private": true,
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
