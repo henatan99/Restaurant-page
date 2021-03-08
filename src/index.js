@@ -1,9 +1,12 @@
 import './style.css';
-import { menuPage } from './menuPage.js';
-import { contactPage } from './contactPage';
+import * as navModule from './navBar.js';
+import * as initialModule from './initialPage.js';
+import * as menuModule from './menuPage.js';
+import * as contactModule from './contactPage';
 
-const content = document.getElementById('#content');
+const content = document.getElementById("content");
 
-
-document.body.appendChild(menuPage);
-document.body.appendChild(contactPage);
+content.appendChild(navModule.navBar());
+content.appendChild(initialModule.initialPage());
+// content.appendChild(menuModule.menuPage());
+// content.appendChild(contactModule.contactPage());

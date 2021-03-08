@@ -1,5 +1,9 @@
 const initialPage = () => {
-    const contactDiv  = document.createElement('div');
-    contactDiv.innerHTML = '<h1>This is Contact Page</h1>';
-    return contactDiv;
+    const initialDiv  = document.createElement('div');
+    initialDiv.classList.add('initial-div');
+    initialDiv.innerHTML = '<h1 class="headline">Real Ethiopian Cultural Food</h1>'+
+    '<p class="more-info">You will enjoy the most exciting and tasty local foods in the city</P>';
+    return initialDiv;
 }
+
+export { initialPage } 

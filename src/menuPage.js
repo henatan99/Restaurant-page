@@ -4,4 +4,4 @@ const menuPage = () => {
     return menuDiv;
 }
 
-export {menuPage}
+export { menuPage }
