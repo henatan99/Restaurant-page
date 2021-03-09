@@ -320,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_background_jpg__WEBPACK_IMPORTED_MODULE_2__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;    \n}\n\n.initial-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.headline {\n    width: 50%;\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;\n}\n\n.more-info {\n    width: 50%;\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-elem {\n    width: 100%;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}\n\n.nav-list-item {\n    padding: 1rem 5rem 1rem 5rem;\n    margin-right: 1rem;\n    background: white;\n    font-size: 40px;\n}\n\n.menu-div {\n    width: 80%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    /* padding: 0 5% 0 5%; */\n}\n\n.menu-item {\n    width: 24%;\n    height: 20rem;\n    background: white;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.menu-img {\n    width: 10rem;\n    height: 10rem;\n    border-radius: 5rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;    \n}\n\n.initial-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.headline {\n    width: 50%;\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;\n}\n\n.more-info {\n    width: 50%;\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-elem {\n    width: 100%;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}\n\n.nav-list-item {\n    padding: 1rem 5rem 1rem 5rem;\n    margin-right: 1rem;\n    background: white;\n    font-size: 40px;\n}\n\n.menu-div {\n    width: 80%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    /* padding: 0 5% 0 5%; */\n}\n\n.menu-item {\n    width: 24%;\n    height: 20rem;\n    background: white;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.menu-img {\n    width: 10rem;\n    height: 10rem;\n    border-radius: 5rem;\n}\n\n.form-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-end;    \n}\n\n.contact-title {\n    width: 20%;\n    border-bottom: 1px solid;\n    color: white;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nform {\n    width: 20%;\n    display: flex;\n    flex-direction: column;\n}\n\nlabel {\n    color: white;\n    font-size: 18px;\n}\n\ninput {\n    height: 1.5rem;\n    margin-bottom: 1rem;\n}\n\ntextarea {\n    margin-bottom: 1rem;\n}\n\nbutton {\n    height: 2rem;\n    font-size: 18px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -529,9 +529,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "contactPage": () => (/* binding */ contactPage)
 /* harmony export */ });
+const inputItem = (name, label) => {
+    const labelTag = '<label for="' + name + '">' + label + '</label>';
+    const inputTag = '<input type="text" name="' + name + '"></inpuut>';
+    return (labelTag + inputTag);    
+}
+
+
 const contactPage = () => {
     const contactDiv  = document.createElement('div');
-    contactDiv.innerHTML = '<h1>This is contact Page</h1>';
+    contactDiv.classList.add('form-div');
+    const formTitle = '<h1 class="contact-title">Contact Us</h1>';
+    const names = ['name', 'job-title', 'restaurant', 'email', 'phone'];
+    const labels = ['Name', 'Job Title', 'Restaurant', 'Email', 'Phone'];
+    let inputs = '';
+    for(let i=0; i<names.length; i++) {
+        inputs += inputItem(names[i], labels[i]);
+    }
+    const textArea = '<textarea name="message" id="message" cols="20" rows="5" class="message"></textarea>';
+    const button = '<button>Submit</button>';
+    contactDiv.innerHTML = formTitle + '<form>' + inputs + textArea + button + '</form>';
     return contactDiv;
 }
 
@@ -654,10 +671,10 @@ __webpack_require__.r(__webpack_exports__);
 
 const content = document.getElementById("content");
 
-// content.appendChild(navModule.navBar());
+content.appendChild(_navBar_js__WEBPACK_IMPORTED_MODULE_1__.navBar());
 // content.appendChild(initialModule.initialPage());
 // content.appendChild(menuModule.menuPage());
-// content.appendChild(contactModule.contactPage());
+content.appendChild(_contactPage__WEBPACK_IMPORTED_MODULE_4__.contactPage());
 
 })();
 
