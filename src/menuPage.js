@@ -11,13 +11,15 @@ const menuItem = (menuImg, menuName) => {
 const menuPage = () => {
     const menuDiv = document.createElement('div');
     menuDiv.classList.add('menu-div');
+    menuDiv.setAttribute('id', 'menu-div');
+    
     const menuImgs = ['food1.jpeg', 'food2.jpeg', 'food3.jpeg', 'food4.jpeg'];
     const menuNames = ['fresh salads', 'party platters', 'sea food', 'vegan desserts'];
     
     for(let i=0; i<menuImgs.length; i++) {
-        menuDiv.appendChild(menuItem(menuImgs[i], menuNames[i]));
+        menuDiv.appendChild(menuItem(menuImgs[i], menuNames[i]));        
     }
-    
+
     return menuDiv;    
 }
 

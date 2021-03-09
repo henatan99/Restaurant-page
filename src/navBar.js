@@ -1,7 +1,8 @@
 const list = (listArray) => {
     let li='';
+    let itemClass = (i) => `${listArray[i].toLowerCase()}`;
     for(let i=0; i<listArray.length; i++) {
-        li += '<li class="nav-list-item">' + listArray[i] + '</li>';
+        li += '<li class="nav-list-item ' + itemClass(i) + '">' + listArray[i] + '</li>';
     }
     return li;
 }

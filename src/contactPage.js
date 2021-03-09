@@ -8,6 +8,8 @@ const inputItem = (name, label) => {
 const contactPage = () => {
     const contactDiv  = document.createElement('div');
     contactDiv.classList.add('form-div');
+    contactDiv.setAttribute('id', 'form-div');
+
     const formTitle = '<h1 class="contact-title">Contact Us</h1>';
     const names = ['name', 'job-title', 'restaurant', 'email', 'phone'];
     const labels = ['Name', 'Job Title', 'Restaurant', 'Email', 'Phone'];
