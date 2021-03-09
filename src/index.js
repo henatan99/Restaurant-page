@@ -8,5 +8,5 @@ const content = document.getElementById("content");
 
 content.appendChild(navModule.navBar());
 // content.appendChild(initialModule.initialPage());
-// content.appendChild(menuModule.menuPage());
-content.appendChild(contactModule.contactPage());
+content.appendChild(menuModule.menuPage());
+// content.appendChild(contactModule.contactPage());

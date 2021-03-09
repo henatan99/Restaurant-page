@@ -673,8 +673,8 @@ const content = document.getElementById("content");
 
 content.appendChild(_navBar_js__WEBPACK_IMPORTED_MODULE_1__.navBar());
 // content.appendChild(initialModule.initialPage());
-// content.appendChild(menuModule.menuPage());
-content.appendChild(_contactPage__WEBPACK_IMPORTED_MODULE_4__.contactPage());
+content.appendChild(_menuPage_js__WEBPACK_IMPORTED_MODULE_3__.menuPage());
+// content.appendChild(contactModule.contactPage());
 
 })();
 
