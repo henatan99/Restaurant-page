@@ -10,8 +10,6 @@ content.appendChild(initialPage());
 content.appendChild(menuPage());
 content.appendChild(contactPage());
 
-// const nav = document.getElementsByClassName("nav-elem");
-
 document.querySelector('#content').addEventListener('click', (e) => {
   e.preventDefault();
   const navTab = e.target;
