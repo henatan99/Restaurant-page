@@ -1,7 +1,7 @@
 # Restaurant-page
 This project is building a restaurant page web app to put into work modularized JS code and webpack. 
 ## Description 
-This project is building a static restaurant website with home, menu and contact pages. The project employs webpack and ES6 module concept to organize and compile the dependancies and modules into a distrinution package. 
+This project is building a static restaurant website with home, menu and contact pages. The project employs webpack and ES6 module concepts to organize and compile the dependencies and modules into a distribution package. 
 The project has two directories namely 'src' and 'dist' other than the root directory.
 
 ### src
