@@ -30,6 +30,9 @@ All html content inside the body except the first outer div element "content", a
 - npm 
 - package.json 
 
+## Live Link
+[Live Link](https://henatan99.github.io/Restaurant-page/)  
+
 ## Authors
 
 👤 **Henok Mossissa**
