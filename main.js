@@ -451,23 +451,23 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "navBar": () => (/* binding */ navBar)
+/* harmony export */   "default": () => (/* binding */ navBar)
 /* harmony export */ });
 const list = (listArray) => {
-    let li='';
-    let itemClass = (i) => `${listArray[i].toLowerCase()}`;
-    for(let i=0; i<listArray.length; i++) {
-        li += '<li class="nav-list-item ' + itemClass(i) + '">' + listArray[i] + '</li>';
-    }
-    return li;
-}
+  let li = '';
+  const itemClass = (i) => `${listArray[i].toLowerCase()}`;
+  for (let i = 0; i < listArray.length; i += 1) {
+    li += `<li class="nav-list-item ${itemClass(i)}">${listArray[i]}</li>`;
+  }
+  return li;
+};
 
 const navBar = () => {
-    const nav = document.createElement('nav');
-    nav.classList.add('nav-elem');
-    nav.innerHTML = '<ul class="nav-list">' + list(['Home', 'Menu', 'Contact']) + '</ul>';
-    return nav;
-}
+  const nav = document.createElement('nav');
+  nav.classList.add('nav-elem');
+  nav.innerHTML = `<ul class="nav-list">${list(['Home', 'Menu', 'Contact'])}</ul>`;
+  return nav;
+};
 
 
 
@@ -477,18 +477,18 @@ const navBar = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "initialPage": () => (/* binding */ initialPage)
+/* harmony export */   "default": () => (/* binding */ initialPage)
 /* harmony export */ });
 const initialPage = () => {
-    const initialDiv  = document.createElement('div');
-    initialDiv.classList.add('initial-div');
-    initialDiv.setAttribute('id', 'initial-div');
-    initialDiv.innerHTML = '<h1 class="headline">Real Ethiopian Cultural Food</h1>'+
-    '<p class="more-info">You will enjoy the most exciting and tasty local foods in the city</P>';
-    return initialDiv;
-}
+  const initialDiv = document.createElement('div');
+  initialDiv.classList.add('initial-div');
+  initialDiv.setAttribute('id', 'initial-div');
+  initialDiv.innerHTML = '<h1 class="headline">Real Ethiopian Cultural Food</h1>'
+    + '<p class="more-info">You will enjoy the most exciting and tasty local foods in the city</P>';
+  return initialDiv;
+};
 
- 
+
 
 /***/ }),
 /* 9 */
@@ -496,32 +496,32 @@ const initialPage = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "menuPage": () => (/* binding */ menuPage)
+/* harmony export */   "default": () => (/* binding */ menuPage)
 /* harmony export */ });
 const menuItem = (menuImg, menuName) => {
-    const menuItemDiv = document.createElement('div');
-    menuItemDiv.classList.add('menu-item');
-    
-    const Img = '<div class="img-div">' + '<img src="../src/' + menuImg + '" class="menu-img">' + '</div>';
-    const Name = '<p class="menu-name">' + menuName + '</p>';
-    menuItemDiv.innerHTML = Img + Name;
-    return menuItemDiv;
-}
+  const menuItemDiv = document.createElement('div');
+  menuItemDiv.classList.add('menu-item');
+
+  const Img = `${'<div class="img-div"><img src="../src/'}${menuImg}" class="menu-img"></div>`;
+  const Name = `<p class="menu-name">${menuName}</p>`;
+  menuItemDiv.innerHTML = Img + Name;
+  return menuItemDiv;
+};
 
 const menuPage = () => {
-    const menuDiv = document.createElement('div');
-    menuDiv.classList.add('menu-div');
-    menuDiv.setAttribute('id', 'menu-div');
-    
-    const menuImgs = ['food1.jpeg', 'food2.jpeg', 'food3.jpeg', 'food4.jpeg'];
-    const menuNames = ['fresh salads', 'party platters', 'sea food', 'vegan desserts'];
-    
-    for(let i=0; i<menuImgs.length; i++) {
-        menuDiv.appendChild(menuItem(menuImgs[i], menuNames[i]));        
-    }
+  const menuDiv = document.createElement('div');
+  menuDiv.classList.add('menu-div');
+  menuDiv.setAttribute('id', 'menu-div');
 
-    return menuDiv;    
-}
+  const menuImgs = ['food1.jpeg', 'food2.jpeg', 'food3.jpeg', 'food4.jpeg'];
+  const menuNames = ['fresh salads', 'party platters', 'sea food', 'vegan desserts'];
+
+  for (let i = 0; i < menuImgs.length; i += 1) {
+    menuDiv.appendChild(menuItem(menuImgs[i], menuNames[i]));
+  }
+
+  return menuDiv;
+};
 
 
 
@@ -531,34 +531,34 @@ const menuPage = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "contactPage": () => (/* binding */ contactPage)
+/* harmony export */   "default": () => (/* binding */ contactPage)
 /* harmony export */ });
 const inputItem = (name, label) => {
-    const labelTag = '<label for="' + name + '">' + label + '</label>';
-    const inputTag = '<input type="text" name="' + name + '"></inpuut>';
-    return (labelTag + inputTag);    
-}
+  const labelTag = `<label for="${name}">${label}</label>`;
+  const inputTag = `<input type="text" name="${name}"></inpuut>`;
+  return (labelTag + inputTag);
+};
 
 
 const contactPage = () => {
-    const contactDiv  = document.createElement('div');
-    contactDiv.classList.add('form-div');
-    contactDiv.setAttribute('id', 'form-div');
+  const contactDiv = document.createElement('div');
+  contactDiv.classList.add('form-div');
+  contactDiv.setAttribute('id', 'form-div');
 
-    const formTitle = '<h1 class="contact-title">Contact Us</h1>';
-    const names = ['name', 'job-title', 'restaurant', 'email', 'phone'];
-    const labels = ['Name', 'Job Title', 'Restaurant', 'Email', 'Phone'];
-    let inputs = '';
-    for(let i=0; i<names.length; i++) {
-        inputs += inputItem(names[i], labels[i]);
-    }
-    const textArea = '<textarea name="message" id="message" cols="20" rows="5" class="message"></textarea>';
-    const button = '<button>Submit</button>';
-    contactDiv.innerHTML = formTitle + '<form>' + inputs + textArea + button + '</form>';
-    return contactDiv;
-}
+  const formTitle = '<h1 class="contact-title">Contact Us</h1>';
+  const names = ['name', 'job-title', 'restaurant', 'email', 'phone'];
+  const labels = ['Name', 'Job Title', 'Restaurant', 'Email', 'Phone'];
+  let inputs = '';
+  for (let i = 0; i < names.length; i += 1) {
+    inputs += inputItem(names[i], labels[i]);
+  }
+  const textArea = '<textarea name="message" id="message" cols="20" rows="5" class="message"></textarea>';
+  const button = '<button>Submit</button>';
+  contactDiv.innerHTML = `${formTitle}<form>${inputs}${textArea}${button}</form>`;
+  return contactDiv;
+};
 
- 
+
 
 /***/ })
 /******/ 	]);
@@ -665,9 +665,9 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _navBar_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
-/* harmony import */ var _initialPage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
-/* harmony import */ var _menuPage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony import */ var _navBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _initialPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _menuPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
 /* harmony import */ var _contactPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
 
 
@@ -675,42 +675,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const content = document.getElementById("content");
-content.appendChild(_navBar_js__WEBPACK_IMPORTED_MODULE_1__.navBar());
-content.appendChild(_initialPage_js__WEBPACK_IMPORTED_MODULE_2__.initialPage());
-content.appendChild(_menuPage_js__WEBPACK_IMPORTED_MODULE_3__.menuPage());
-content.appendChild(_contactPage__WEBPACK_IMPORTED_MODULE_4__.contactPage());
+const content = document.getElementById('content');
+content.appendChild((0,_navBar__WEBPACK_IMPORTED_MODULE_1__.default)());
+content.appendChild((0,_initialPage__WEBPACK_IMPORTED_MODULE_2__.default)());
+content.appendChild((0,_menuPage__WEBPACK_IMPORTED_MODULE_3__.default)());
+content.appendChild((0,_contactPage__WEBPACK_IMPORTED_MODULE_4__.default)());
 
 // const nav = document.getElementsByClassName("nav-elem");
 
 document.querySelector('#content').addEventListener('click', (e) => {
-    e.preventDefault();
-    const navTab = e.target;
-    const initial = document.querySelector('#initial-div');
-    const menu = document.querySelector('#menu-div');
-    const form = document.querySelector('#form-div');
-    
-    if(navTab.classList.contains('home')) {
-        initial.style.display = 'flex';
-        menu.style.display = 'none'
-        form.style.display = 'none';
-    }
-    else if(navTab.classList.contains('menu')) {
-        initial.style.display = 'none';
-        menu.style.display = 'flex'
-        form.style.display = 'none';
-    }
-    else if(navTab.classList.contains('contact')) {
-        initial.style.display = 'none';
-        menu.style.display = 'none';
-        form.style.display = 'flex';
-    }
-    else {
+  e.preventDefault();
+  const navTab = e.target;
+  const initial = document.querySelector('#initial-div');
+  const menu = document.querySelector('#menu-div');
+  const form = document.querySelector('#form-div');
 
-    }
+  if (navTab.classList.contains('home')) {
+    initial.style.display = 'flex';
+    menu.style.display = 'none';
+    form.style.display = 'none';
+  } else if (navTab.classList.contains('menu')) {
+    initial.style.display = 'none';
+    menu.style.display = 'flex';
+    form.style.display = 'none';
+  } else if (navTab.classList.contains('contact')) {
+    initial.style.display = 'none';
+    menu.style.display = 'none';
+    form.style.display = 'flex';
+  }
 });
- 
-
 
 })();
 
