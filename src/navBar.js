@@ -8,7 +8,7 @@ const list = (listArray) => {
 
 const navBar = () => {
     const nav = document.createElement('nav');
-    
+    nav.classList.add('nav-elem');
     nav.innerHTML = '<ul class="nav-list">' + list(['Home', 'Menu', 'Contact']) + '</ul>';
     return nav;
 }

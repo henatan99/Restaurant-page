@@ -30,8 +30,19 @@
     margin-top: 10rem;
 }
 
+.nav-elem {
+    width: 100%;
+}
+
 .nav-list {
     display: flex;
     flex-direction: row;
     list-style: none;
+}
+
+.nav-list-item {
+    padding: 1rem 5rem 1rem 5rem;
+    margin-right: 1rem;
+    background: white;
+    font-size: 40px;
 }

@@ -320,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_background_jpg__WEBPACK_IMPORTED_MODULE_2__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-end;\n}\n\n.initial-div {\n    width: 50%;\n}\n\n.headline {\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;\n}\n\n.more-info {\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-end;\n}\n\n.initial-div {\n    width: 50%;\n}\n\n.headline {\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;\n}\n\n.more-info {\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-elem {\n    width: 100%;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}\n\n.nav-list-item {\n    padding: 1rem 5rem 1rem 5rem;\n    margin-right: 1rem;\n    background: white;\n    font-size: 40px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -463,7 +463,7 @@ const list = (listArray) => {
 
 const navBar = () => {
     const nav = document.createElement('nav');
-    
+    nav.classList.add('nav-elem');
     nav.innerHTML = '<ul class="nav-list">' + list(['Home', 'Menu', 'Contact']) + '</ul>';
     return nav;
 }
@@ -496,6 +496,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "menuPage": () => (/* binding */ menuPage)
 /* harmony export */ });
+const menuItem = (menuImg, menuName) => {
+    const menuItemDiv = document.createElement('div');
+    const Img = '<div class="img-div">' + '<img src="./' + menuImg + '" class="menu-img">' + '</div>';
+    const Name = '<p class="menu-name">' + menuName + '</p>';
+    menuItemDiv.innerHTML = Img + Name;
+    return menuItemDiv;
+}
+
+
 const menuPage = () => {
     const menuDiv = document.createElement('div');
     menuDiv.innerHTML = '<h1>This is Menu Page</h1>';
