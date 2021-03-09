@@ -26,9 +26,9 @@ All html content inside the body except the first outer div element "content", a
 - Home page 
 ![screenshot](src/docs/home.png)
 - Menu Page
-![screenshot](src/docs/home.png)
+![screenshot](src/docs/menu.png)
 - Contact page
-![screenshot](src/docs/home.png)
+![screenshot](src/docs/contact.png)
 ## Built With
 
 - Javscript
