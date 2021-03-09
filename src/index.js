@@ -6,7 +6,7 @@ import * as contactModule from './contactPage';
 
 const content = document.getElementById("content");
 
-// content.appendChild(navModule.navBar());
+content.appendChild(navModule.navBar());
 // content.appendChild(initialModule.initialPage());
 // content.appendChild(menuModule.menuPage());
-// content.appendChild(contactModule.contactPage());
+content.appendChild(contactModule.contactPage());
