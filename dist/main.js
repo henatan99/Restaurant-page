@@ -320,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_background_jpg__WEBPACK_IMPORTED_MODULE_2__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-end;\n}\n\n.initial-div {\n    width: 50%;\n}\n\n.headline {\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;\n}\n\n.more-info {\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-elem {\n    width: 100%;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}\n\n.nav-list-item {\n    padding: 1rem 5rem 1rem 5rem;\n    margin-right: 1rem;\n    background: white;\n    font-size: 40px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;    \n}\n\n.initial-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.headline {\n    width: 50%;\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;\n}\n\n.more-info {\n    width: 50%;\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-elem {\n    width: 100%;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}\n\n.nav-list-item {\n    padding: 1rem 5rem 1rem 5rem;\n    margin-right: 1rem;\n    background: white;\n    font-size: 40px;\n}\n\n.menu-div {\n    width: 80%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    /* padding: 0 5% 0 5%; */\n}\n\n.menu-item {\n    width: 24%;\n    height: 20rem;\n    background: white;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.menu-img {\n    width: 10rem;\n    height: 10rem;\n    border-radius: 5rem;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -498,17 +498,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const menuItem = (menuImg, menuName) => {
     const menuItemDiv = document.createElement('div');
-    const Img = '<div class="img-div">' + '<img src="./' + menuImg + '" class="menu-img">' + '</div>';
+    menuItemDiv.classList.add('menu-item');
+    
+    const Img = '<div class="img-div">' + '<img src="../src/' + menuImg + '" class="menu-img">' + '</div>';
     const Name = '<p class="menu-name">' + menuName + '</p>';
     menuItemDiv.innerHTML = Img + Name;
     return menuItemDiv;
 }
 
-
 const menuPage = () => {
     const menuDiv = document.createElement('div');
-    menuDiv.innerHTML = '<h1>This is Menu Page</h1>';
-    return menuDiv;
+    menuDiv.classList.add('menu-div');
+    const menuImgs = ['food1.jpeg', 'food2.jpeg', 'food3.jpeg', 'food4.jpeg'];
+    const menuNames = ['fresh salads', 'party platters', 'sea food', 'vegan desserts'];
+    
+    for(let i=0; i<menuImgs.length; i++) {
+        menuDiv.appendChild(menuItem(menuImgs[i], menuNames[i]));
+    }
+    
+    return menuDiv;    
 }
 
 
@@ -646,8 +654,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const content = document.getElementById("content");
 
-content.appendChild(_navBar_js__WEBPACK_IMPORTED_MODULE_1__.navBar());
-content.appendChild(_initialPage_js__WEBPACK_IMPORTED_MODULE_2__.initialPage());
+// content.appendChild(navModule.navBar());
+// content.appendChild(initialModule.initialPage());
 // content.appendChild(menuModule.menuPage());
 // content.appendChild(contactModule.contactPage());
 
