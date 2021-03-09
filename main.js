@@ -320,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_background_jpg__WEBPACK_IMPORTED_MODULE_2__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;    \n}\n\n.initial-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.headline {\n    width: 50%;\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;\n}\n\n.more-info {\n    width: 50%;\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-elem {\n    width: 100%;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}\n\n.nav-list-item {\n    padding: 1rem 5rem 1rem 5rem;\n    margin-right: 1rem;\n    background: white;\n    font-size: 40px;\n}\n\n.menu-div {\n    width: 80%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    /* padding: 0 5% 0 5%; */\n}\n\n.menu-item {\n    width: 24%;\n    height: 20rem;\n    background: white;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.menu-img {\n    width: 10rem;\n    height: 10rem;\n    border-radius: 5rem;\n}\n\n.form-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-end;    \n}\n\n.contact-title {\n    width: 20%;\n    border-bottom: 1px solid;\n    color: white;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nform {\n    width: 20%;\n    display: flex;\n    flex-direction: column;\n}\n\nlabel {\n    color: white;\n    font-size: 18px;\n}\n\ninput {\n    height: 1.5rem;\n    margin-bottom: 1rem;\n}\n\ntextarea {\n    margin-bottom: 1rem;\n}\n\nbutton {\n    height: 2rem;\n    font-size: 18px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".content {\n    width: 100%;\n    height: 100vh;\n    /* background-color: blue; */\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: cover;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;    \n}\n\n.initial-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.headline {\n    width: 50%;\n    font-size: 60px;\n    font-family: 'Courier New', Courier, monospace;\n    color: white;\n    text-align: center;   \n}\n\n.more-info {\n    width: 50%;\n    font-size: 40px;\n    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n    color: white;\n    text-align: center;\n    margin-top: 10rem;\n}\n\n.nav-elem {\n    width: 100%;\n}\n\n.nav-list {\n    display: flex;\n    flex-direction: row;\n    list-style: none;\n}\n\n.nav-list-item {\n    padding: 0.5rem 5rem 0.5rem 5rem;\n    margin-right: 1rem;\n    background: white;\n    font-size: 40px;\n}\n\n.nav-list-item:hover {\n    background: gray;\n    cursor: pointer;\n}\n\n.menu-div {\n    width: 80%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    display: none;\n}\n\n.menu-item {\n    width: 24%;\n    height: 20rem;\n    background: white;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.menu-img {\n    width: 10rem;\n    height: 10rem;\n    border-radius: 5rem;\n}\n\n.form-div {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: flex-end;\n    display: none;\n}\n\n.contact-title {\n    width: 15%;\n    border-bottom: 1px solid;\n    color: white;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n    margin-right: 20%;\n}\n\nform {\n    width: 20%;\n    display: flex;\n    flex-direction: column;\n    margin-right: 15%;\n}\n\nlabel {\n    color: white;\n    font-size: 18px;\n}\n\ninput {\n    height: 1.3rem;\n    margin-bottom: 1rem;\n}\n\ntextarea {\n    margin-bottom: 1rem;\n}\n\nbutton {\n    height: 2rem;\n    font-size: 18px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -455,8 +455,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const list = (listArray) => {
     let li='';
+    let itemClass = (i) => `${listArray[i].toLowerCase()}`;
     for(let i=0; i<listArray.length; i++) {
-        li += '<li class="nav-list-item">' + listArray[i] + '</li>';
+        li += '<li class="nav-list-item ' + itemClass(i) + '">' + listArray[i] + '</li>';
     }
     return li;
 }
@@ -481,6 +482,7 @@ __webpack_require__.r(__webpack_exports__);
 const initialPage = () => {
     const initialDiv  = document.createElement('div');
     initialDiv.classList.add('initial-div');
+    initialDiv.setAttribute('id', 'initial-div');
     initialDiv.innerHTML = '<h1 class="headline">Real Ethiopian Cultural Food</h1>'+
     '<p class="more-info">You will enjoy the most exciting and tasty local foods in the city</P>';
     return initialDiv;
@@ -509,13 +511,15 @@ const menuItem = (menuImg, menuName) => {
 const menuPage = () => {
     const menuDiv = document.createElement('div');
     menuDiv.classList.add('menu-div');
+    menuDiv.setAttribute('id', 'menu-div');
+    
     const menuImgs = ['food1.jpeg', 'food2.jpeg', 'food3.jpeg', 'food4.jpeg'];
     const menuNames = ['fresh salads', 'party platters', 'sea food', 'vegan desserts'];
     
     for(let i=0; i<menuImgs.length; i++) {
-        menuDiv.appendChild(menuItem(menuImgs[i], menuNames[i]));
+        menuDiv.appendChild(menuItem(menuImgs[i], menuNames[i]));        
     }
-    
+
     return menuDiv;    
 }
 
@@ -539,6 +543,8 @@ const inputItem = (name, label) => {
 const contactPage = () => {
     const contactDiv  = document.createElement('div');
     contactDiv.classList.add('form-div');
+    contactDiv.setAttribute('id', 'form-div');
+
     const formTitle = '<h1 class="contact-title">Contact Us</h1>';
     const names = ['name', 'job-title', 'restaurant', 'email', 'phone'];
     const labels = ['Name', 'Job Title', 'Restaurant', 'Email', 'Phone'];
@@ -670,11 +676,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const content = document.getElementById("content");
-
 content.appendChild(_navBar_js__WEBPACK_IMPORTED_MODULE_1__.navBar());
-// content.appendChild(initialModule.initialPage());
+content.appendChild(_initialPage_js__WEBPACK_IMPORTED_MODULE_2__.initialPage());
 content.appendChild(_menuPage_js__WEBPACK_IMPORTED_MODULE_3__.menuPage());
-// content.appendChild(contactModule.contactPage());
+content.appendChild(_contactPage__WEBPACK_IMPORTED_MODULE_4__.contactPage());
+
+// const nav = document.getElementsByClassName("nav-elem");
+
+document.querySelector('#content').addEventListener('click', (e) => {
+    e.preventDefault();
+    const navTab = e.target;
+    const initial = document.querySelector('#initial-div');
+    const menu = document.querySelector('#menu-div');
+    const form = document.querySelector('#form-div');
+    
+    if(navTab.classList.contains('home')) {
+        initial.style.display = 'flex';
+        menu.style.display = 'none'
+        form.style.display = 'none';
+    }
+    else if(navTab.classList.contains('menu')) {
+        initial.style.display = 'none';
+        menu.style.display = 'flex'
+        form.style.display = 'none';
+    }
+    else if(navTab.classList.contains('contact')) {
+        initial.style.display = 'none';
+        menu.style.display = 'none';
+        form.style.display = 'flex';
+    }
+    else {
+
+    }
+});
+ 
+
 
 })();
 
